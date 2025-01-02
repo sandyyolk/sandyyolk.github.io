@@ -16,133 +16,157 @@
     </div>
   
     <script>
-      // Questions array
-      const questions = [
-        {
-          text: "You're eating bugs in the field when a pig appears...",
-          image: "pictures/test1.jpg",
-          choices: [ 
-          { text: "Yeehaw", pathway: 0 },
-          { text: "Oink Oink", pathway: 1 },
-        ],
-        {
-          text: "The pig awkwardly trots away from you. A rabbit hops nearby...",
-          image: "pictures/test2.jpg",
-          choices: ["Chase it", "Let it go"]
-        },
-        {
-          text: "The forest becomes dark and you hear a roar...",
-          image: "pictures/test3.jpg",
-          choices: ["Run", "Investigate"]
-        },
-        {
-          text: "A bear in a suit offers you juice...",
-          image: "pictures/test4.jpg",
-          choices: ["Trust", "Don't trust"]
-        },
-        {
-          text: "The bear does not care. He makes you drink the juice by force",
-          image: "pictures/test5.jpg",
-          choices: ["Fight", "Accept"]
-        },
-        {
-          text: "You close your eyes and begin dreaming of...",
-          image: "pictures/test6.jpg",
-          choices: ["People you know", "Places that don't seem real"]
-        },
-        {
-          text: "You are suddenly awoken by a splash of water...",
-          image: "pictures/test7.jpg",
-          choices: ["Curse", "Cry"]
-        },
-        {
-          text: "You are flying in a private jet. How do you react...",
-          image: "pictures/test8.jpg",
-          choices: ["Jump out", "Reminisce"]
-        },
-        {
-          text: "The jet takes a hit and starts freefalling...",
-          image: "pictures/test9.jpg",
-          choices: ["GGs", "Flap your arms like a bird"]
-        },
-        {
-          text: "A big bird sweeps underneath you, saving you from your doom...",
-          image: "pictures/test10.jpg",
-          choices: ["Thank the bird", "Jump off"]
+        // Questions array
+        const questions = [
+            {
+            text: "You're eating bugs in the field when a pig appears...",
+            image: "pictures/test1.jpg",
+            choices: [
+                { text: "Yeehaw", pathway: 0 },
+                { text: "Oink Oink", pathway: 3 },]
+            },
+            {
+            text: "The pig awkwardly trots away from you. A rabbit hops nearby...",
+            image: "pictures/test2.jpg",
+            choices: [{ text: "Chase it", pathway: 2 },
+                { text: "Let it go", pathway: 5 },]
+            },
+            {
+            text: "The forest becomes dark and you hear a roar...",
+            image: "pictures/test3.jpg",
+            choices: [{ text: "Run", pathway: 3 },
+                { text: "Investigate", pathway: 1 },]
+            },
+            {
+            text: "A bear in a suit offers you juice...",
+            image: "pictures/test4.jpg",
+            choices: [{ text: "Trust", pathway: 4 },
+                { text: "Don't trust", pathway: 3 },]
+            },
+            {
+            text: "The bear does not care. He makes you drink the juice by force",
+            image: "pictures/test5.jpg",
+            choices: [{ text: "Fight", pathway: 5 },
+                { text: "Accept", pathway: 3 },]
+            },
+            {
+            text: "You close your eyes and begin dreaming of...",
+            image: "pictures/test6.jpg",
+            choices: [{ text: "People you know", pathway: 0 },
+                { text: "Places that don't seem real", pathway: 3 },]
+            },
+            {
+            text: "You are suddenly awoken by a splash of water...",
+            image: "pictures/test7.jpg",
+            choices: [{ text: "Curse", pathway: 2 },
+                { text: "Cry", pathway: 1 },]
+            },
+            {
+            text: "You are flying in a private jet. How do you react...",
+            image: "pictures/test8.jpg",
+            choices: [{ text: "Jump out", pathway: 2 },
+                { text: "You're just a chill guy", pathway: 5 },]
+            },
+            {
+            text: "The jet takes a hit and starts freefalling...",
+            image: "pictures/test9.jpg",
+            choices: [{ text: "Ggs", pathway: 3 },
+                { text: "Flap your arms like a bird", pathway: 1 },]
+            },
+            {
+            text: "A big bird sweeps underneath you, saving you from your doom...",
+            image: "pictures/test10.jpg",
+            choices: [{ text: "Thank the bird", pathway: 0 },
+                { text: "Jump off", pathway: 4 },]
+            }
+        ];
+    
+        let currentQuestionIndex = 0;
+        let score = [0, 0, 0, 0, 0, 0];
+    
+        // Function to load the question and choices
+        function loadQuestion() {
+            if (currentQuestionIndex < questions.length) {
+            const question = questions[currentQuestionIndex];
+            document.getElementById('question-container').innerHTML = `
+                <p>${question.text}</p>
+                <img src="${question.image}" alt="Question Image" style="max-width: 70%; height: auto;">
+            `;
+    
+            // Clear previous choices
+            document.getElementById('choices-container').innerHTML = '';
+    
+            // Create buttons for the choices
+            question.choices.forEach((choice) => {
+            const button = document.createElement("button");
+            button.innerText = choice.text;
+            button.onclick = () => handleChoice(choice.pathway);
+            document.getElementById("choices-container").appendChild(button);
+            });
+            } else {
+            showResult();
+            }
         }
-      ];
   
-      let currentQuestionIndex = 0;
-      let score = [0, 0, 0, 0, 0, 0];
-  
-      // Function to load the question and choices
-      function loadQuestion() {
-        if (currentQuestionIndex < questions.length) {
-          const question = questions[currentQuestionIndex];
-          document.getElementById('question-container').innerHTML = `
-            <p>${question.text}</p>
-            <img src="${question.image}" alt="Question Image" style="max-width: 70%; height: auto;">
-          `;
-  
-          // Clear previous choices
-          document.getElementById('choices-container').innerHTML = '';
-  
-          // Create buttons for the choices
-          question.choices.forEach((choice, index) => {
-            const button = document.createElement('button');
-            button.innerText = choice;
-            button.onclick = () => handleChoice(index);
-            document.getElementById('choices-container').appendChild(button);
-          });
-        } else {
-          showResult();
-        }
-      }
-  
-      // Handle user's choice
-      function handleChoice(choiceIndex) {
-        score[choiceIndex]++;
+        // Handle user's choice
+        function handleChoice(pathway) {
+        score[pathway]++; // Increment score for the selected pathway
         currentQuestionIndex++;
         loadQuestion();
-      }
-  
-      // Show the result based on scores
-      function showResult() {
-        let maxScore = Math.max(...score);
-        let pathwayIndex = score.indexOf(maxScore);
-  
-        let resultMessage;
-        switch (pathwayIndex) {
-          case 0:
-            resultMessage = "Pathway 1: You are an adventurer!";
-            break;
-          case 1:
-            resultMessage = "Pathway 2: You are a thinker!";
-            break;
-          case 2:
-            resultMessage = "Pathway 3: You are a creative spirit!";
-            break;
-          case 3:
-            resultMessage = "Pathway 4: You are a natural leader!";
-            break;
-          case 4:
-            resultMessage = "Pathway 5: You are a calm soul!";
-            break;
-          case 5:
-            resultMessage = "Pathway 6: You are a free spirit!";
-            break;
-          default:
-            resultMessage = "Oops! Something went wrong.";
         }
   
-        document.getElementById('question-container').innerHTML = `
-          <h2>${resultMessage}</h2>
-        `;
-        document.getElementById('choices-container').innerHTML = '';
-      }
-  
-      // Start the quiz
-      loadQuestion();
+        // Show the result based on scores
+        function showResult() {
+            let maxScore = Math.max(...score);
+            let pathwayIndex = score.indexOf(maxScore);
+            function showResult() {
+          const maxScore = Math.max(...pathwayScores);
+            const tiedIndexes = pathwayScores
+           .map((score, index) => (score === maxScore ? index : -1))
+          .filter(index => index !== -1); // Find all indexes with the max score
+
+  // Randomly select one of the tied pathways
+  const randomIndex = tiedIndexes[Math.floor(Math.random() * tiedIndexes.length)];
+
+  const resultMessage = `Your dominant pathway is Pathway ${randomIndex + 1}!`;
+  document.getElementById("question-container").innerHTML = `
+    <h2>${resultMessage}</h2>
+  `;
+  document.getElementById("choices-container").innerHTML = "";
+}
+            
+            let resultMessage;
+            switch (pathwayIndex) {
+            case 0:
+                resultMessage = "Phat Bara";
+                break;
+            case 1:
+                resultMessage = "Cute Bara";
+                break;
+            case 2:
+                resultMessage = "Bara with a gun";
+                break;
+            case 3:
+                resultMessage = "Bara with a cake";
+                break;
+            case 4:
+                resultMessage = "Baby Bara";
+                break;
+            case 5:
+                resultMessage = "Rainbow Bara";
+                break;
+            default:
+                resultMessage = "Not Bara";
+            }
+    
+            document.getElementById('question-container').innerHTML = `
+            <h2>${resultMessage}</h2>
+            `;
+            document.getElementById('choices-container').innerHTML = '';
+        }
+    
+        // Start the quiz
+        loadQuestion();
     </script>
   </body>
   </html>
