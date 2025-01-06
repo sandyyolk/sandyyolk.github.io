@@ -11,7 +11,7 @@
     <div class="centered-content" id="quiz-container">
       <h1>Personality Test</h1>
       <div id="question-container"></div>
-      <div id=".large"></div>
+      <div id="large"></div>
       <div id="choices-container"></div>
     </div>
   
@@ -19,65 +19,93 @@
         // Questions array
         const questions = [
             {
-            text: "You're eating bugs in the field when a pig appears...",
+            text: "It’s your first day at Bapybara Academy, and you notice a path that no one else seems to see. What do you do?",
             image: "pictures/test1.jpg",
             choices: [
-                { text: "Yeehaw", pathway: 0 },
-                { text: "Oink Oink", pathway: 3 },]
+                { text: "Follow it immediately.", pathway: 1 },
+                { text: "Leave a small offering at the entrance and continue to class.", pathway: 0 },
+                { text: "Mark the spot on your map for later exploration.", pathway: 3 },
+                { text: "Invite a friend to come along and check it out together.", pathway: 2 },]
             },
             {
-            text: "The pig awkwardly trots away from you. A rabbit hops nearby...",
+            text: "Walking through the path, your eyes start to wander. What do you notice in your exploration?",
             image: "pictures/test2.jpg",
-            choices: [{ text: "Chase it", pathway: 2 },
-                { text: "Let it go", pathway: 5 },]
+            choices: [{ text: "A beautiful fountain.", pathway: 0 },
+                { text: "A sparkling golden coin", pathway: 4 },
+                { text: "A statue of a hero wielding a sword.", pathway: 2 },
+                { text: "A large elk with white horns.", pathway: 5 },]
             },
             {
-            text: "The forest becomes dark and you hear a roar...",
+            text: "TThe path leads you to a glowing tree deep in the woods. A note is attached to one of the branches. What do you do next?",
             image: "pictures/test3.jpg",
-            choices: [{ text: "Run", pathway: 3 },
-                { text: "Investigate", pathway: 1 },]
+            choices: [{ text: "Climb the branch to grab the note.", pathway: 5 },
+                { text: "Ask the tree politely if you can take it.", pathway: 1 },
+                { text: "Cast a spell to retrieve it.", pathway: 3 },
+                { text: "Jump up and take the note.", pathway: 2 },]
             },
             {
-            text: "A bear in a suit offers you juice...",
+            text: "The note reveals a riddle about a hidden treasure in Bapybara Academy. How do you begin your search?",
             image: "pictures/test4.jpg",
-            choices: [{ text: "Trust", pathway: 4 },
-                { text: "Don't trust", pathway: 3 },]
+            choices: [{ text: "Run back to the academy and start looking for clues in small crevices.", pathway: 4 },
+                { text: "Do research in old books and maps to decipher the riddle.", pathway: 3 },
+                { text: "Walk near the water to see if the answer will reveal itself naturally.", pathway: 5 },
+                { text: "Recruit your classmates to form a treasure hunting team.", pathway: 1 },]
             },
             {
-            text: "The bear does not care. He makes you drink the juice by force",
+            text: "While searching, you stumble upon a locked door with strange symbols. What’s your next move?",
             image: "pictures/test5.jpg",
-            choices: [{ text: "Fight", pathway: 5 },
-                { text: "Accept", pathway: 3 },]
+            choices: [{ text: "Trace the symbols and see if they react to touch.", pathway: 5 },
+                { text: "Try to knock the door down.", pathway: 3 },
+                { text: "Whisper a spell and watch carefully.", pathway: 0 },
+                { text: "Knock and introduce yourself to whatever is behind the door.", pathway: 2 },]
             },
             {
-            text: "You close your eyes and begin dreaming of...",
+            text: "The door opens to reveal a secret underground room. Inside, you see a pedestal with an ancient artifact. What do you do?",
             image: "pictures/test6.jpg",
-            choices: [{ text: "People you know", pathway: 0 },
-                { text: "Places that don't seem real", pathway: 3 },]
+            choices: [{ text: "Pick up the artifact without hesitation.", pathway: 2 },
+                { text: "Examine the artifact closely before making a decision.", pathway: 4 },
+                { text: "Circle the room, admiring the artifacts without touching anything.", pathway: 0 },
+                { text: "Call your friends to take a look at the artifact together.", pathway: 3 },]
             },
             {
-            text: "You are suddenly awoken by a splash of water...",
+            text: "Ultimately, you pick up the artifact. But suddenly, the ground begins to shake! How do you react?",
             image: "pictures/test7.jpg",
-            choices: [{ text: "Curse", pathway: 2 },
-                { text: "Cry", pathway: 1 },]
+            choices: [{ text: "Stand your ground and prepare for whatever comes next.", pathway: 0 },
+                { text: "Quickly place the artifact back and apologize.", pathway: 1 },
+                { text: "Use magic to try to stabilize the ground.", pathway: 2 },
+                { text: "Run towards the exit, carrying the artifact with you.", pathway: 5 },]
             },
             {
-            text: "You are flying in a private jet. How do you react...",
+            text: "You emerge from the underground room to find the sky swirling with colors. A mysterious figure approaches. How do you greet them?",
             image: "pictures/test8.jpg",
-            choices: [{ text: "Jump out", pathway: 2 },
-                { text: "You're just a chill guy", pathway: 5 },]
+            choices: [{ text: "Bow respectfully and await their message.", pathway: 3 },
+                { text: "Ask them directly who they are and what they want.", pathway: 5 },
+                { text: "Offer them the artifact as a peace offering.", pathway: 2 },
+                { text: "Stand beside your friends and greet them together.", pathway: 0 },]
             },
             {
-            text: "The jet takes a hit and starts freefalling...",
+            text: "The figure tells you the artifact holds great power and offers to teach you how to use it. How do you respond?",
             image: "pictures/test9.jpg",
-            choices: [{ text: "Ggs", pathway: 3 },
-                { text: "Flap your arms like a bird", pathway: 1 },]
+            choices: [{ text: "Eagerly accept and ask to start right away.", pathway: 3 },
+                { text: "Agree, but insist on taking your time to learn carefully.", pathway: 1 },
+                { text: "Thank them but decide to let the artifact rest for now.", pathway: 2 },
+                { text: "Accept and invite your classmates to join in on the lessons.", pathway: 5 },]
             },
             {
-            text: "A big bird sweeps underneath you, saving you from your doom...",
+            text: "During training, you accidentally unleash a burst of energy. What do you do next?",
             image: "pictures/test10.jpg",
-            choices: [{ text: "Thank the bird", pathway: 0 },
-                { text: "Jump off", pathway: 4 },]
+            choices: [{ text: "Laugh it off.", pathway: 0 },
+                { text: "Apologize and try to fix the damage.", pathway: 2 },
+                { text: "Analyze what went wrong to avoid repeating the mistake.", pathway: 1 },
+                { text: "Turn the accident into a game and invite others to join.", pathway: 5 },]
+            },
+            {
+            text: "With your newfound skills, what do you want to create to show off your powers?",
+            image: "pictures/test10.jpg",
+            choices: [{ text: "A fiery beacon at the top of the academy.", pathway: 0 },
+                { text: "A magical garden that blooms forever.", pathway: 3 },
+                { text: "A hidden library filled with magic scrolls.", pathway: 1 },
+                { text: "A winged statue that watches over the academy.", pathway: 4 },]
             }
         ];
     
@@ -90,7 +118,7 @@
             const question = questions[currentQuestionIndex];
             document.getElementById('question-container').innerHTML = `
                 <p>${question.text}</p>
-                <img src="${question.image}" alt="Question Image" style="max-width: 70%; height: auto;">
+                <img src="${question.image}" class="large">
             `;
     
             // Clear previous choices
@@ -138,22 +166,22 @@
             let resultMessage;
             switch (pathwayIndex) {
             case 0:
-                resultMessage = "Phat Bara";
+                resultMessage = "Mermaid Bara";
                 break;
             case 1:
-                resultMessage = "Cute Bara";
+                resultMessage = "Dragon Bara";
                 break;
             case 2:
-                resultMessage = "Bara with a gun";
+                resultMessage = "Phoenix Bara";
                 break;
             case 3:
-                resultMessage = "Bara with a cake";
+                resultMessage = "Wizard Bara";
                 break;
             case 4:
-                resultMessage = "Baby Bara";
+                resultMessage = "Fairy Bara";
                 break;
             case 5:
-                resultMessage = "Rainbow Bara";
+                resultMessage = "Golem Bara";
                 break;
             default:
                 resultMessage = "Not Bara";
