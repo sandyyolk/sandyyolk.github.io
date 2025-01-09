@@ -23,89 +23,89 @@
             image: "pictures/test1.jpg",
             choices: [
                 { text: "Follow it immediately.", pathway: 1 },
-                { text: "Leave a small offering at the entrance and continue to class.", pathway: 0 },
+                { text: "Leave a small offering at the entrance and continue to class.", pathway: [0, 4] },
                 { text: "Mark the spot on your map for later exploration.", pathway: 3 },
-                { text: "Invite a friend to come along and check it out together.", pathway: 2 },]
+                { text: "Invite a friend to come along and check it out together.", pathway: [2, 5] },]
             },
             {
             text: "Walking through the path, your eyes start to wander. What do you notice in your exploration?",
             image: "pictures/test2.jpg",
             choices: [{ text: "A beautiful fountain.", pathway: 0 },
-                { text: "A sparkling golden coin", pathway: 4 },
-                { text: "A statue of a hero wielding a sword.", pathway: 2 },
-                { text: "A large elk with white horns.", pathway: 5 },]
+                { text: "A sparkling golden coin", pathway: [1, 2] },
+                { text: "A statue of a hero wielding a sword.", pathway: [3, 5] },
+                { text: "A large elk with white horns.", pathway: 4 },]
             },
             {
             text: "TThe path leads you to a glowing tree deep in the woods. A note is attached to one of the branches. What do you do next?",
             image: "pictures/test3.jpg",
-            choices: [{ text: "Climb the branch to grab the note.", pathway: 5 },
-                { text: "Ask the tree politely if you can take it.", pathway: 1 },
+            choices: [{ text: "Climb the branch to grab the note.", pathway: 2 },
+                { text: "Ask the tree politely if you can take it.", pathway: [0, 5] },
                 { text: "Cast a spell to retrieve it.", pathway: 3 },
-                { text: "Jump up and take the note.", pathway: 2 },]
+                { text: "Jump up and take the note.", pathway: [4, 1] },]
             },
             {
             text: "The note reveals a riddle about a hidden treasure in Bapybara Academy. How do you begin your search?",
             image: "pictures/test4.jpg",
             choices: [{ text: "Run back to the academy and start looking for clues in small crevices.", pathway: 4 },
-                { text: "Do research in old books and maps to decipher the riddle.", pathway: 3 },
-                { text: "Walk near the water to see if the answer will reveal itself naturally.", pathway: 5 },
-                { text: "Recruit your classmates to form a treasure hunting team.", pathway: 1 },]
+                { text: "Do research in old books and maps to decipher the riddle.", pathway: [3, 5] },
+                { text: "Walk near the water to see if the answer will reveal itself naturally.", pathway: 0 },
+                { text: "Recruit your classmates to form a treasure hunting team.", pathway: [4, 2] },]
             },
             {
             text: "While searching, you stumble upon a locked door with strange symbols. What’s your next move?",
             image: "pictures/test5.jpg",
-            choices: [{ text: "Trace the symbols and see if they react to touch.", pathway: 5 },
-                { text: "Try to knock the door down.", pathway: 3 },
-                { text: "Whisper a spell and watch carefully.", pathway: 0 },
-                { text: "Knock and introduce yourself to whatever is behind the door.", pathway: 2 },]
+            choices: [{ text: "Trace the symbols and see if they react to touch.", pathway: 4 },
+                { text: "Try to knock the door down.", pathway: [2, 1] },
+                { text: "Whisper a spell and watch carefully.", pathway: 3 },
+                { text: "Knock and introduce yourself to whatever is behind the door.", pathway: [0, 5] },]
             },
             {
             text: "The door opens to reveal a secret underground room. Inside, you see a pedestal with an ancient artifact. What do you do?",
             image: "pictures/test6.jpg",
-            choices: [{ text: "Pick up the artifact without hesitation.", pathway: 2 },
-                { text: "Examine the artifact closely before making a decision.", pathway: 4 },
+            choices: [{ text: "Pick up the artifact without hesitation.", pathway: 1 },
+                { text: "Examine the artifact closely before making a decision.", pathway: [3, 5] },
                 { text: "Circle the room, admiring the artifacts without touching anything.", pathway: 0 },
-                { text: "Call your friends to take a look at the artifact together.", pathway: 3 },]
+                { text: "Call your friends to take a look at the artifact together.", pathway: [2, 4] },]
             },
             {
             text: "Ultimately, you pick up the artifact. But suddenly, the ground begins to shake! How do you react?",
             image: "pictures/test7.jpg",
-            choices: [{ text: "Stand your ground and prepare for whatever comes next.", pathway: 0 },
-                { text: "Quickly place the artifact back and apologize.", pathway: 1 },
-                { text: "Use magic to try to stabilize the ground.", pathway: 2 },
-                { text: "Run towards the exit, carrying the artifact with you.", pathway: 5 },]
+            choices: [{ text: "Stand your ground and prepare for whatever comes next.", pathway: [5, 2] },
+                { text: "Quickly place the artifact back and apologize.", pathway: [4, 0] },
+                { text: "Use magic to try to stabilize the ground.", pathway: 3 },
+                { text: "Run towards the exit, carrying the artifact with you.", pathway: 1 },]
             },
             {
             text: "You emerge from the underground room to find the sky swirling with colors. A mysterious figure approaches. How do you greet them?",
             image: "pictures/test8.jpg",
-            choices: [{ text: "Bow respectfully and await their message.", pathway: 3 },
-                { text: "Ask them directly who they are and what they want.", pathway: 5 },
-                { text: "Offer them the artifact as a peace offering.", pathway: 2 },
-                { text: "Stand beside your friends and greet them together.", pathway: 0 },]
+            choices: [{ text: "Bow respectfully and await their message.", pathway: 0 },
+                { text: "Ask them directly who they are and what they want.", pathway: [1, 3] },
+                { text: "Offer them the artifact as a peace offering.", pathway: 4 },
+                { text: "Stand beside your friends and greet them together.", pathway: [2, 5] },]
             },
             {
             text: "The figure tells you the artifact holds great power and offers to teach you how to use it. How do you respond?",
             image: "pictures/test9.jpg",
-            choices: [{ text: "Eagerly accept and ask to start right away.", pathway: 3 },
-                { text: "Agree, but insist on taking your time to learn carefully.", pathway: 1 },
-                { text: "Thank them but decide to let the artifact rest for now.", pathway: 2 },
-                { text: "Accept and invite your classmates to join in on the lessons.", pathway: 5 },]
+            choices: [{ text: "Eagerly accept and ask to start right away.", pathway: 1 },
+                { text: "Agree, but insist on taking your time to learn carefully.", pathway: [3 ,5] },
+                { text: "Thank them but decide to let the artifact rest for now.", pathway: 0 },
+                { text: "Accept and invite your classmates to join in on the lessons.", pathway: [2, 4] },]
             },
             {
             text: "During training, you accidentally unleash a burst of energy. What do you do next?",
             image: "pictures/test10.jpg",
-            choices: [{ text: "Laugh it off.", pathway: 0 },
-                { text: "Apologize and try to fix the damage.", pathway: 2 },
-                { text: "Analyze what went wrong to avoid repeating the mistake.", pathway: 1 },
-                { text: "Turn the accident into a game and invite others to join.", pathway: 5 },]
+            choices: [{ text: "Laugh it off.", pathway: 1 },
+                { text: "Apologize and try to fix the damage.", pathway: [4, 0] },
+                { text: "Analyze what went wrong to avoid repeating the mistake.", pathway: 3 },
+                { text: "Turn the accident into a game and invite others to join.", pathway: [5, 2] },]
             },
             {
             text: "With your newfound skills, what do you want to create to show off your powers?",
             image: "pictures/test10.jpg",
-            choices: [{ text: "A fiery beacon at the top of the academy.", pathway: 0 },
-                { text: "A magical garden that blooms forever.", pathway: 3 },
-                { text: "A hidden library filled with magic scrolls.", pathway: 1 },
-                { text: "A winged statue that watches over the academy.", pathway: 4 },]
+            choices: [{ text: "A fiery beacon at the top of the academy.", pathway: 2 },
+                { text: "A magical garden that blooms forever.", pathway: [4, 0] },
+                { text: "A hidden library filled with magic scrolls.", pathway: 3 },
+                { text: "A winged statue that watches over the academy.", pathway: [1, 5] },]
             }
         ];
     
@@ -141,6 +141,25 @@
         score[pathway]++; // Increment score for the selected pathway
         currentQuestionIndex++;
         loadQuestion();
+
+        function handleChoice(pathway) {
+    if (Array.isArray(pathway)) {
+        // If pathway is an array, increment score for each pathway
+        pathway.forEach((path) => {
+            score[path]++; // Increment score for each pathway in the array
+        });
+    } else {
+        // If pathway is a single value, increment score for that pathway
+        score[pathway]++;
+    }
+
+    // Move to the next question
+    currentQuestionIndex++;
+
+    // Load the next question
+    loadQuestion();
+}
+
         }
   
         // Show the result based on scores
