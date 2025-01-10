@@ -1,8 +1,8 @@
 /* Reset any default margin or padding */
 body, html {
-    margin: 2;
+    margin: 5;
     padding: 0;
-    height: 130%; /* Ensure the page uses the full viewport height */
+    height: 120%; /* Ensure the page uses the full viewport height */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     display: flex; /* Use flexbox to align content */
     flex-direction: column; /* Stack content vertically */

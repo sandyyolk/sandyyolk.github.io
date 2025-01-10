@@ -1,31 +1,30 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Personality Test</title>
-  </head>
-  <body>
-  
+</head>
+<body>
     <div class="centered-content" id="quiz-container">
-      <h1>Personality Test</h1>
-      <div id="question-container"></div>
-      <div id="large"></div>
-      <div id="choices-container"></div>
+        <h1>Personality Test</h1>
+        <div id="question-container"></div>
+        <div id="choices-container"></div>
     </div>
-  
+
     <script>
         // Questions array
         const questions = [
             {
-            text: "It’s your first day at Bapybara Academy, and you notice a path that no one else seems to see. What do you do?",
-            image: "pictures/test1.jpg",
-            choices: [
-                { text: "Follow it immediately.", pathway: 1 },
-                { text: "Leave a small offering at the entrance and continue to class.", pathway: [0, 4] },
-                { text: "Mark the spot on your map for later exploration.", pathway: 3 },
-                { text: "Invite a friend to come along and check it out together.", pathway: [2, 5] },]
+                text: "It’s your first day at Bapybara Academy, and you notice a path that no one else seems to see. What do you do?",
+                image: "pictures/test1.jpg",
+                choices: [
+                    { text: "Follow it immediately.", pathway: 1 },
+                    { text: "Leave a small offering at the entrance and continue to class.", pathway: [0, 4] },
+                    { text: "Mark the spot on your map for later exploration.", pathway: 3 },
+                    { text: "Invite a friend to come along and check it out together.", pathway: [2, 5] }
+                ]
             },
             {
             text: "Walking through the path, your eyes start to wander. What do you notice in your exploration?",
@@ -114,8 +113,9 @@
     
         // Function to load the question and choices
         function loadQuestion() {
+            console.log(currentQuestionIndex)
             if (currentQuestionIndex < questions.length) {
-            const question = questions[currentQuestionIndex];
+                const question = questions[currentQuestionIndex];
             document.getElementById('question-container').innerHTML = `
                 <p>${question.text}</p>
                 <img src="${question.image}" class="large">
@@ -138,11 +138,6 @@
   
         // Handle user's choice
         function handleChoice(pathway) {
-        score[pathway]++; // Increment score for the selected pathway
-        currentQuestionIndex++;
-        loadQuestion();
-
-        function handleChoice(pathway) {
     if (Array.isArray(pathway)) {
         // If pathway is an array, increment score for each pathway
         pathway.forEach((path) => {
@@ -159,29 +154,21 @@
     // Load the next question
     loadQuestion();
 }
-
-        }
   
         // Show the result based on scores
         function showResult() {
-            let maxScore = Math.max(...score);
-            let pathwayIndex = score.indexOf(maxScore);
-            function showResult() {
-          const maxScore = Math.max(...pathwayScores);
-            const tiedIndexes = pathwayScores
-           .map((score, index) => (score === maxScore ? index : -1))
-          .filter(index => index !== -1); // Find all indexes with the max score
+            console.log("Pathway Scores:", score);
+            const maxScore = Math.max(...score);
+            const tiedIndexes = score
+                .map((score, index) => (score === maxScore ? index : -1))
+                . filter(index => index !== -1); // Find all indexes with the max score
+            console.log("Max Score:", maxScore);
+            console.log("Tied Indexes:", tiedIndexes);
 
-  // Randomly select one of the tied pathways
-  const randomIndex = tiedIndexes[Math.floor(Math.random() * tiedIndexes.length)];
+            // Randomly select one of the tied pathways
+            const randomIndex = tiedIndexes[Math.floor(Math.random() * tiedIndexes.length)];
+            const pathwayIndex = randomIndex
 
-  const resultMessage = `Your dominant pathway is Pathway ${randomIndex + 1}!`;
-  document.getElementById("question-container").innerHTML = `
-    <h2>${resultMessage}</h2>
-  `;
-  document.getElementById("choices-container").innerHTML = "";
-}
-            
             let resultMessage;
             switch (pathwayIndex) {
             case 0:
@@ -211,7 +198,6 @@
             `;
             document.getElementById('choices-container').innerHTML = '';
         }
-    
         // Start the quiz
         loadQuestion();
     </script>
