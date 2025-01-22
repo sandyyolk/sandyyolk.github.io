@@ -8,16 +8,14 @@
 </head>
 <body>
     <div class="centered-content" id="quiz-container">
-        <h1>Personality Test</h1>
         <div id="question-container"></div>
         <div id="choices-container"></div>
     </div>
 
     <script>
-        // Questions array
         const questions = [
             {
-                text: "It’s your first day at Bapybara Academy, and you notice a path that no one else seems to see. What do you do?",
+                text: "On your way to class, something unusual catches your eye: a hidden path that no one else seems to notice. What do you do?",
                 image: "pictures/1-path.PNG",
                 choices: [
                     { text: "Follow it immediately.", pathway: 1 },
@@ -35,7 +33,7 @@
                 { text: "A large elk with white horns.", pathway: 4 },]
             },
             {
-            text: "TThe path leads you to a glowing tree deep in the woods. A note is attached to one of the branches. What do you do next?",
+            text: "The path leads you to a glowing tree deep in the woods. A note is attached to one of the branches. What do you do next?",
             image: "pictures/3-tree.PNG",
             choices: [{ text: "Climb the branch to grab the note.", pathway: 2 },
                 { text: "Ask the tree politely if you can take it.", pathway: [0, 5] },
@@ -60,7 +58,7 @@
             },
             {
             text: "The door opens to reveal a secret underground room. Inside, you see a pedestal with an ancient artifact. What do you do?",
-            image: "pictures/6-artifact.PNG",
+            image: "pictures/6-artifact.png",
             choices: [{ text: "Pick up the artifact without hesitation.", pathway: 1 },
                 { text: "Examine the artifact closely before making a decision.", pathway: [3, 5] },
                 { text: "Circle the room, admiring the artifacts without touching anything.", pathway: 0 },
@@ -118,7 +116,7 @@
                 const question = questions[currentQuestionIndex];
             document.getElementById('question-container').innerHTML = `
                 <p>${question.text}</p>
-                <img src="${question.image}" class="large">
+                <img src="${question.image}" class=".large">
             `;
     
             // Clear previous choices
@@ -204,11 +202,10 @@
     
             document.getElementById('question-container').innerHTML = `
             <h2>${resultMessage}</h2>
-            <img src="${resultimageSrc}" alt="${resultMessage}" class="result-image">
+            <img src="${resultimageSrc}" alt="${resultMessage}" class=".large">
             `;
             document.getElementById('choices-container').innerHTML = '';
         }
-        // Start the quiz
         loadQuestion();
     </script>
   </body>
