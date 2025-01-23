@@ -69,14 +69,23 @@ h1, p {
 /* Centered content container */
 .centered-content {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     color: white; 
     align-items: center;
     text-align: center;
     width: 100%; 
-    max-width: 800px; 
+    max-width: 800px;
+    height: 100vh;
     margin: 20 auto; 
     z-index: 1; /* Ensure content is above overlay */
+}
+
+.title-text {
+    display: flex;
+    text-align: center;
+    margin: 30 auto;
+    z-index: 1;
 }
 
 /* Question and image styling */
@@ -84,11 +93,11 @@ h1, p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; 
+    gap: 20px;
 }
 
 #question-container img {
-    max-width: 100%;
+    max-width: 70%;
     height: auto;
     border-radius: 20px; /* Rounded corners for images */
 }
@@ -99,6 +108,19 @@ h1, p {
     flex-direction: column; 
     gap: 15px; /* Add space (indent) between buttons */
     align-items: center; /
+}
+
+#final-results-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#final-results-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* Rounded corners for images */
 }
 
 /* Button styles */

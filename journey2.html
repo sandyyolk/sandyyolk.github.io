@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Personality Test</title>
+    <title>Bapybara Academy</title>
 </head>
 <body>
-    <div class="centered-content" id="quiz-container">
+    <div class="centered-content">
         <div id="question-container"></div>
+        <div id="final-results-container"></div>
         <div id="choices-container"></div>
     </div>
 
@@ -118,6 +119,7 @@
                 <p>${question.text}</p>
                 <img src="${question.image}" class=".large">
             `;
+            document.getElementById('final-results-container').innerHTML = '';
     
             // Clear previous choices
             document.getElementById('choices-container').innerHTML = '';
@@ -200,11 +202,11 @@
                 resultimageSrc = "pictures/0-Title.png";
             }
     
-            document.getElementById('question-container').innerHTML = `
-            <body>
+            document.getElementById('final-results-container').innerHTML = `
             <h2>${resultMessage}</h2>
             <img src="${resultimageSrc}" alt="${resultMessage}" class="image">
             `;
+            document.getElementById('question-container').innerHTML = '';
             document.getElementById('choices-container').innerHTML = '';
         }
         loadQuestion();
