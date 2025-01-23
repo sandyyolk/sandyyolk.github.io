@@ -11,7 +11,6 @@ body, html {
     box-sizing: border-box;
 }
 
-/* Background settings */
 body {
     background-image: url("pictures/star..jpg"); 
     background-size: auto; /* Ensures the image doesn't stretch */
@@ -127,7 +126,7 @@ h1, p {
 button {
     padding: 10px 15px;
     font-size: 20px;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Sans MS', sans-serif;
     color: white;
     background-color: #11a2ce;
     border: none;
@@ -152,4 +151,45 @@ button:hover {
     display: block;
     margin: 0 auto;
     object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    /* Adjustments for tablets */
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .centered-content {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjustments for small screens (e.g., iPhones) */
+    body {
+        font-size: 12px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    #question-container img,
+    #final-results-container img {
+        max-width: 90%;
+    }
 }
