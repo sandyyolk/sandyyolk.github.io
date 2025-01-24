@@ -1,0 +1,144 @@
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("pictures/star.png"); 
+    background-size: cover; /* Ensures it covers the viewport */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-position: center;
+    border: 1px solid red;
+}
+
+.centered-content {
+    width: 100vw; /* full viewport width */
+    height: calc(100vw * (16 / 9)); /* maintain 9:16 aspect ratio */
+    max-height: 100vh; /* full viewport height */
+    max-width: calc(100vh * (9 / 16));
+    padding: 20px;
+    background-color: rgb(255, 196, 0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+    border: 1px solid rgb(0, 60, 255);
+
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+
+}
+
+.title {
+    font-size: 21px;
+    margin-bottom: 3vh;
+}
+
+/* Question and image styling */
+#question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#question-container img {
+    max-width: 70%;
+    height: auto;
+}
+
+/* Choices container */
+#choices-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    align-items: center; /
+}
+
+#final-results-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#final-results-container img {
+    width: calc(1000vh * (9 / 16));
+    height: auto;
+    border-radius: 10px; 
+}
+
+/* Button Settings */
+button {
+    padding: 10px 10px;
+    width: 70vw;
+    max-width: calc(80vh * (9 / 16)); 
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 18px; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    color: white;
+    background-color: #e25a0a;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:first-of-type {
+    margin-top: 2rem;
+}
+button:hover {
+    background-color: #9b4a25;
+}
+
+/* Image styling */
+.image {
+    width: 70%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.image2 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;   
+}
+
+@media (hover: hover) {
+    .choice-button:hover {
+        background-color: #f3dba7; /* Slightly darker background on hover */
+    }
+}
+.choice-button:focus {
+    background-color: #fff; /* Slightly darker background on hover */
+}
+.story-text {
+    font-size: 20px;
+    margin-bottom: 1rem; /* Space above the choices container */
+/* padding-bottom: 5rem; */
+}
+
+.image {
+    max-width: 70%; /* Set max width of image container */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.image-container img {
+    width: 100%; /* Make the image fill its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra space */
+    max-width: 100%; /* Ensure image does not exceed its container */
+}
