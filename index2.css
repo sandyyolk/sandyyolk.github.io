@@ -10,13 +10,13 @@ body, html {
     background-size: cover; /* Ensures it covers the viewport */
     background-repeat: no-repeat; /* Prevent tiling */
     background-position: center;
-    border: 1px solid red;
+    overflow: hidden;
 }
 
 .centered-content {
     width: 100vw; /* full viewport width */
     height: calc(100vw * (16 / 9)); /* maintain 9:16 aspect ratio */
-    max-height: 100vh; /* full viewport height */
+    max-height: 120vh; /* full viewport height */
     max-width: calc(100vh * (9 / 16));
     padding: 20px;
     background-color: rgb(255, 196, 0);
@@ -27,7 +27,6 @@ body, html {
     flex-direction: column;
     justify-content: center;
     overflow: auto;
-    border: 1px solid rgb(0, 60, 255);
 
     font-family: 'Comic Sans MS', sans-serif;
     font-size: clamp(1rem, 2.5vw, 1.8rem);
@@ -68,7 +67,7 @@ body, html {
 }
 
 #final-results-container img {
-    width: calc(1000vh * (9 / 16));
+    width: calc(100vh * (9 / 16));
     height: auto;
     border-radius: 10px; 
 }
@@ -77,7 +76,7 @@ body, html {
 button {
     padding: 10px 10px;
     width: 70vw;
-    max-width: calc(80vh * (9 / 16)); 
+    max-width: calc(90vh * (9 / 16)); 
     font-family: 'Comic Sans MS', sans-serif;
     font-size: 18px; 
     display: flex;
@@ -103,6 +102,7 @@ button:hover {
     width: 70%;
     height: auto;
     max-width: 100%;
+    border-radius: 10px;
     display: block;
     margin: 0 auto;
     object-fit: contain;
@@ -119,11 +119,11 @@ button:hover {
 
 @media (hover: hover) {
     .choice-button:hover {
-        background-color: #f3dba7; /* Slightly darker background on hover */
+        background-color: #e25a0a; /* Slightly darker background on hover */
     }
 }
 .choice-button:focus {
-    background-color: #fff; /* Slightly darker background on hover */
+    background-color: #9b4a25; /* Slightly darker background on hover */
 }
 .story-text {
     font-size: 20px;
