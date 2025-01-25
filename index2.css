@@ -15,8 +15,8 @@ body, html {
 
 .centered-content {
     width: 100vw; /* full viewport width */
-    height: calc(120vw * (16 / 9)); /* maintain 9:16 aspect ratio */
-    max-height: 150vh; /* full viewport height */
+    height: calc(100vw * (16 / 9)); /* maintain 9:16 aspect ratio */
+    max-height: 100vh; /* full viewport height */
     max-width: calc(100vh * (9 / 16));
     padding: 20px;
     background-color: #C8E7FF;
@@ -27,7 +27,7 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow-y: auto;
+    overflow: auto;
     overflow-x: hidden;
     font-family: 'Comic Sans MS', sans-serif;
     font-size: 20px;
@@ -145,7 +145,7 @@ button:hover {
     max-width: 80px;
     display: block;
     margin-bottom: 0px;
-    margin-top: 2vh;
+    margin-top: 15vh;
     object-fit: contain;   
 }
 
