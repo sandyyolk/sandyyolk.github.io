@@ -15,8 +15,8 @@ body, html {
 
 .centered-content {
     width: 100vw; /* full viewport width */
-    height: calc(100vw * (16 / 9)); /* maintain 9:16 aspect ratio */
-    max-height: 100vh; /* full viewport height */
+    height: calc(120vw * (16 / 9)); /* maintain 9:16 aspect ratio */
+    max-height: 150vh; /* full viewport height */
     max-width: calc(100vh * (9 / 16));
     padding: 20px;
     background-color: #C8E7FF;
@@ -27,9 +27,10 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     font-family: 'Comic Sans MS', sans-serif;
-    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    font-size: 20px;
 }
 
 .title-text{
@@ -43,7 +44,8 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    margin-bottom: .01vh;
+    gap: 0px;
 }
 
 #question-container img {
@@ -95,7 +97,7 @@ body, html {
 
 button {
     padding: 10px 10px;
-    width: 70vw;
+    width: 85vw;
     max-width: calc(90vh * (9 / 16)); 
     font-family: 'Comic Sans MS', sans-serif;
     font-size: 18px; 
@@ -133,7 +135,7 @@ button:hover {
     height: auto;
     max-width: 100%;
     display: block;
-    margin: 0 auto;
+    margin: 20px;
     object-fit: contain;   
 }
 
@@ -142,7 +144,8 @@ button:hover {
     height: auto;
     max-width: 80px;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    margin-top: 2vh;
     object-fit: contain;   
 }
 
