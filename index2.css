@@ -116,7 +116,6 @@ button:first-of-type {
     margin-top: 2rem;
 }
 button:last-of-type {
-    background-color: #281b41;
     margin-bottom: 20px;
 }
 button:hover {
@@ -149,7 +148,7 @@ button:hover {
     max-width: 80px;
     display: block;
     margin-bottom: 0px;
-    margin-top: 5vh;
+    margin-top: 20px;
     object-fit: contain;   
 }
 
